@@ -193,6 +193,9 @@ _mvn()
     local plugin_goals_jgitflow="jgitflow:feature-start|jgitflow:feature-finish|jgitflow:release-start|jgitflow:release-finish|jgitflow:hotfix-start|jgitflow:hotfix-finish|jgitflow:build-number"
     local plugin_goals_wildfly="wildfly:add-resource|wildfly:deploy|wildfly:deploy-only|wildfly:deploy-artifact|wildfly:redeploy|wildfly:redeploy-only|wildfly:undeploy|wildfly:undeploy-artifact|wildfly:run|wildfly:start|wildfly:shutdown|wildfly:execute-commands"
     local plugin_goals_formatter="formatter:format|formatter:help|formatter:validate"
+    # quarkus-maven-plugin
+    # mvn help:describe -Dplugin=io.quarkus:quarkus-maven-plugin
+    local plugin_goals_quarkus="quarkus:add-extension|quarkus:add-extensions|quarkus:analyze-call-tree|quarkus:build|quarkus:create|quarkus:dev|quarkus:generate-config|quarkus:help|quarkus:list-extensions|quarkus:native-image|quarkus:remote-dev"
 
     ## some plugin (like jboss-as) has '-' which is not allowed in shell var name, to use '_' then replace
     local common_plugins=`compgen -v | grep "^plugin_goals_.*" | sed 's/plugin_goals_//g' | tr '_' '-' | tr '\n' '|'`
